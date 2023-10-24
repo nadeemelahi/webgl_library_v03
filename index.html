@@ -42,9 +42,9 @@ void main(void){
 	float yAngleRadians = radians(yAngle);
 	float cy = cos(yAngleRadians); 
 	float sy = sin(yAngleRadians); 
-	mat4 rotateY = mat4( cy  , 0.0 ,-sy  , 0.0 ,
+	mat4 rotateY = mat4( cy  , 0.0 , sy  , 0.0 ,
 			     0.0 , 1.0 , 0.0 , 0.0 ,
-			     sy  , 0.0 , cy  , 0.0 ,
+			    -sy  , 0.0 , cy  , 0.0 ,
 			     0.0 , 0.0 , 0.0 , 1.0     );
 
 	float xAngleRadians = radians(xAngle);
@@ -58,7 +58,7 @@ void main(void){
 	mat4 rotate = rotateX * rotateY * rotateZ;
 
 	mat4 scale = mat4( xScale , 0.0    , 0.0    , 0.0 ,
-			    0.0   , yScale , sx     , 0.0 ,
+			    0.0   , yScale , 0.0    , 0.0 ,
 			    0.0   , 0.0    , zScale , 0.0 ,
 			    0.0   , 0.0    , 0.0    , 1.0 	);
 
